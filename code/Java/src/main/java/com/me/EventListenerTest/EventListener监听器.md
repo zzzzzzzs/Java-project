@@ -17,6 +17,8 @@ categories: java
 
 首先，为您的监听器创建一个扩展了的接口`EventListener`：
 
+<!--more-->
+
 MyListener.java
 
 ```java
