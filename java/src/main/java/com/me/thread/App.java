@@ -4,7 +4,7 @@ package com.me.thread;
 import java.util.concurrent.*;
 
 
-public class ThreadPool {
+public class App {
     public static void main(String[] args) {
         ExecutorService executorService = ThreadPoolUtil.getInstance();
         // 设置的线程数是10，因此一次打印10个
