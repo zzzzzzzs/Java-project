@@ -9,11 +9,17 @@ import java.util.List;
 // 找最大数
 public class lc_1791 {
     public static void main(String[] args) {
-        String s1 = "12";
-        String s2 = "13";
-        int i = (s1 + s2).compareTo(s2 + s1);
+        StringBuilder sss = new StringBuilder("0");
+        sss.append("0");
+        sss.append("0");
+        sss.append("0");
+        sss.append("0");
 
-        System.out.println("1".compareTo("0"));
+        int j = 0;
+        for (int i = 0; i < sss.length(); ++i) {
+             j += sss.charAt(i) - '0';
+        }
 
+        System.out.println(j);
     }
 }
