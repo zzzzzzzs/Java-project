@@ -1,8 +1,8 @@
-package com.me.tuple;
+package com.me.DataStructure.tuple;
 
 import com.me.utils.StringUtils;
 
-public class Tuple8<T0, T1, T2, T3, T4, T5, T6, T7> extends Tuple {
+public class Tuple10<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> extends Tuple {
 
 	private static final long serialVersionUID = 1L;
 
@@ -22,11 +22,15 @@ public class Tuple8<T0, T1, T2, T3, T4, T5, T6, T7> extends Tuple {
 	public T6 f6;
 	/** Field 7 of the tuple. */
 	public T7 f7;
+	/** Field 8 of the tuple. */
+	public T8 f8;
+	/** Field 9 of the tuple. */
+	public T9 f9;
 
 	/**
 	 * Creates a new tuple where all fields are null.
 	 */
-	public Tuple8() {}
+	public Tuple10() {}
 
 	/**
 	 * Creates a new tuple and assigns the given values to the tuple's fields.
@@ -39,8 +43,10 @@ public class Tuple8<T0, T1, T2, T3, T4, T5, T6, T7> extends Tuple {
 	 * @param value5 The value for field 5
 	 * @param value6 The value for field 6
 	 * @param value7 The value for field 7
+	 * @param value8 The value for field 8
+	 * @param value9 The value for field 9
 	 */
-	public Tuple8(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5, T6 value6, T7 value7) {
+	public Tuple10(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5, T6 value6, T7 value7, T8 value8, T9 value9) {
 		this.f0 = value0;
 		this.f1 = value1;
 		this.f2 = value2;
@@ -49,11 +55,13 @@ public class Tuple8<T0, T1, T2, T3, T4, T5, T6, T7> extends Tuple {
 		this.f5 = value5;
 		this.f6 = value6;
 		this.f7 = value7;
+		this.f8 = value8;
+		this.f9 = value9;
 	}
 
 	@Override
 	public int getArity() {
-		return 8;
+		return 10;
 	}
 
 	@Override
@@ -68,6 +76,8 @@ public class Tuple8<T0, T1, T2, T3, T4, T5, T6, T7> extends Tuple {
 			case 5: return (T) this.f5;
 			case 6: return (T) this.f6;
 			case 7: return (T) this.f7;
+			case 8: return (T) this.f8;
+			case 9: return (T) this.f9;
 			default: throw new IndexOutOfBoundsException(String.valueOf(pos));
 		}
 	}
@@ -100,6 +110,12 @@ public class Tuple8<T0, T1, T2, T3, T4, T5, T6, T7> extends Tuple {
 			case 7:
 				this.f7 = (T7) value;
 				break;
+			case 8:
+				this.f8 = (T8) value;
+				break;
+			case 9:
+				this.f9 = (T9) value;
+				break;
 			default: throw new IndexOutOfBoundsException(String.valueOf(pos));
 		}
 	}
@@ -115,8 +131,10 @@ public class Tuple8<T0, T1, T2, T3, T4, T5, T6, T7> extends Tuple {
 	 * @param value5 The value for field 5
 	 * @param value6 The value for field 6
 	 * @param value7 The value for field 7
+	 * @param value8 The value for field 8
+	 * @param value9 The value for field 9
 	 */
-	public void setFields(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5, T6 value6, T7 value7) {
+	public void setFields(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5, T6 value6, T7 value7, T8 value8, T9 value9) {
 		this.f0 = value0;
 		this.f1 = value1;
 		this.f2 = value2;
@@ -125,6 +143,8 @@ public class Tuple8<T0, T1, T2, T3, T4, T5, T6, T7> extends Tuple {
 		this.f5 = value5;
 		this.f6 = value6;
 		this.f7 = value7;
+		this.f8 = value8;
+		this.f9 = value9;
 	}
 
 
@@ -134,7 +154,7 @@ public class Tuple8<T0, T1, T2, T3, T4, T5, T6, T7> extends Tuple {
 
 	/**
 	 * Creates a string representation of the tuple in the form
-	 * (f0, f1, f2, f3, f4, f5, f6, f7),
+	 * (f0, f1, f2, f3, f4, f5, f6, f7, f8, f9),
 	 * where the individual fields are the value returned by calling {@link Object#toString} on that field.
 	 * @return The string representation of the tuple.
 	 */
@@ -148,6 +168,8 @@ public class Tuple8<T0, T1, T2, T3, T4, T5, T6, T7> extends Tuple {
 			+ "," + StringUtils.arrayAwareToString(this.f5)
 			+ "," + StringUtils.arrayAwareToString(this.f6)
 			+ "," + StringUtils.arrayAwareToString(this.f7)
+			+ "," + StringUtils.arrayAwareToString(this.f8)
+			+ "," + StringUtils.arrayAwareToString(this.f9)
 			+ ")";
 	}
 
@@ -161,11 +183,11 @@ public class Tuple8<T0, T1, T2, T3, T4, T5, T6, T7> extends Tuple {
 		if (this == o) {
 			return true;
 		}
-		if (!(o instanceof Tuple8)) {
+		if (!(o instanceof Tuple10)) {
 			return false;
 		}
 		@SuppressWarnings("rawtypes")
-        Tuple8 tuple = (Tuple8) o;
+        Tuple10 tuple = (Tuple10) o;
 		if (f0 != null ? !f0.equals(tuple.f0) : tuple.f0 != null) {
 			return false;
 		}
@@ -190,6 +212,12 @@ public class Tuple8<T0, T1, T2, T3, T4, T5, T6, T7> extends Tuple {
 		if (f7 != null ? !f7.equals(tuple.f7) : tuple.f7 != null) {
 			return false;
 		}
+		if (f8 != null ? !f8.equals(tuple.f8) : tuple.f8 != null) {
+			return false;
+		}
+		if (f9 != null ? !f9.equals(tuple.f9) : tuple.f9 != null) {
+			return false;
+		}
 		return true;
 	}
 
@@ -203,6 +231,8 @@ public class Tuple8<T0, T1, T2, T3, T4, T5, T6, T7> extends Tuple {
 		result = 31 * result + (f5 != null ? f5.hashCode() : 0);
 		result = 31 * result + (f6 != null ? f6.hashCode() : 0);
 		result = 31 * result + (f7 != null ? f7.hashCode() : 0);
+		result = 31 * result + (f8 != null ? f8.hashCode() : 0);
+		result = 31 * result + (f9 != null ? f9.hashCode() : 0);
 		return result;
 	}
 
@@ -212,15 +242,17 @@ public class Tuple8<T0, T1, T2, T3, T4, T5, T6, T7> extends Tuple {
 	*/
 	@Override
 	@SuppressWarnings("unchecked")
-	public Tuple8<T0, T1, T2, T3, T4, T5, T6, T7> copy() {
-		return new Tuple8<>(this.f0,
+	public Tuple10<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> copy() {
+		return new Tuple10<>(this.f0,
 			this.f1,
 			this.f2,
 			this.f3,
 			this.f4,
 			this.f5,
 			this.f6,
-			this.f7);
+			this.f7,
+			this.f8,
+			this.f9);
 	}
 
 	/**
@@ -231,14 +263,16 @@ public class Tuple8<T0, T1, T2, T3, T4, T5, T6, T7> extends Tuple {
 	 * instead of
 	 * {@code new Tuple3<Integer, Double, String>(n, x, s)}
 	 */
-	public static <T0, T1, T2, T3, T4, T5, T6, T7> Tuple8<T0, T1, T2, T3, T4, T5, T6, T7> of(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5, T6 value6, T7 value7) {
-		return new Tuple8<>(value0,
+	public static <T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> Tuple10<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9> of(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5, T6 value6, T7 value7, T8 value8, T9 value9) {
+		return new Tuple10<>(value0,
 			value1,
 			value2,
 			value3,
 			value4,
 			value5,
 			value6,
-			value7);
+			value7,
+			value8,
+			value9);
 	}
 }

@@ -1,8 +1,8 @@
-package com.me.tuple;
+package com.me.DataStructure.tuple;
 
 import com.me.utils.StringUtils;
 
-public class Tuple12<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> extends Tuple {
+public class Tuple6<T0, T1, T2, T3, T4, T5> extends Tuple {
 
 	private static final long serialVersionUID = 1L;
 
@@ -18,23 +18,11 @@ public class Tuple12<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> extends T
 	public T4 f4;
 	/** Field 5 of the tuple. */
 	public T5 f5;
-	/** Field 6 of the tuple. */
-	public T6 f6;
-	/** Field 7 of the tuple. */
-	public T7 f7;
-	/** Field 8 of the tuple. */
-	public T8 f8;
-	/** Field 9 of the tuple. */
-	public T9 f9;
-	/** Field 10 of the tuple. */
-	public T10 f10;
-	/** Field 11 of the tuple. */
-	public T11 f11;
 
 	/**
 	 * Creates a new tuple where all fields are null.
 	 */
-	public Tuple12() {}
+	public Tuple6() {}
 
 	/**
 	 * Creates a new tuple and assigns the given values to the tuple's fields.
@@ -45,31 +33,19 @@ public class Tuple12<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> extends T
 	 * @param value3 The value for field 3
 	 * @param value4 The value for field 4
 	 * @param value5 The value for field 5
-	 * @param value6 The value for field 6
-	 * @param value7 The value for field 7
-	 * @param value8 The value for field 8
-	 * @param value9 The value for field 9
-	 * @param value10 The value for field 10
-	 * @param value11 The value for field 11
 	 */
-	public Tuple12(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5, T6 value6, T7 value7, T8 value8, T9 value9, T10 value10, T11 value11) {
+	public Tuple6(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5) {
 		this.f0 = value0;
 		this.f1 = value1;
 		this.f2 = value2;
 		this.f3 = value3;
 		this.f4 = value4;
 		this.f5 = value5;
-		this.f6 = value6;
-		this.f7 = value7;
-		this.f8 = value8;
-		this.f9 = value9;
-		this.f10 = value10;
-		this.f11 = value11;
 	}
 
 	@Override
 	public int getArity() {
-		return 12;
+		return 6;
 	}
 
 	@Override
@@ -82,12 +58,6 @@ public class Tuple12<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> extends T
 			case 3: return (T) this.f3;
 			case 4: return (T) this.f4;
 			case 5: return (T) this.f5;
-			case 6: return (T) this.f6;
-			case 7: return (T) this.f7;
-			case 8: return (T) this.f8;
-			case 9: return (T) this.f9;
-			case 10: return (T) this.f10;
-			case 11: return (T) this.f11;
 			default: throw new IndexOutOfBoundsException(String.valueOf(pos));
 		}
 	}
@@ -114,24 +84,6 @@ public class Tuple12<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> extends T
 			case 5:
 				this.f5 = (T5) value;
 				break;
-			case 6:
-				this.f6 = (T6) value;
-				break;
-			case 7:
-				this.f7 = (T7) value;
-				break;
-			case 8:
-				this.f8 = (T8) value;
-				break;
-			case 9:
-				this.f9 = (T9) value;
-				break;
-			case 10:
-				this.f10 = (T10) value;
-				break;
-			case 11:
-				this.f11 = (T11) value;
-				break;
 			default: throw new IndexOutOfBoundsException(String.valueOf(pos));
 		}
 	}
@@ -145,26 +97,14 @@ public class Tuple12<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> extends T
 	 * @param value3 The value for field 3
 	 * @param value4 The value for field 4
 	 * @param value5 The value for field 5
-	 * @param value6 The value for field 6
-	 * @param value7 The value for field 7
-	 * @param value8 The value for field 8
-	 * @param value9 The value for field 9
-	 * @param value10 The value for field 10
-	 * @param value11 The value for field 11
 	 */
-	public void setFields(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5, T6 value6, T7 value7, T8 value8, T9 value9, T10 value10, T11 value11) {
+	public void setFields(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5) {
 		this.f0 = value0;
 		this.f1 = value1;
 		this.f2 = value2;
 		this.f3 = value3;
 		this.f4 = value4;
 		this.f5 = value5;
-		this.f6 = value6;
-		this.f7 = value7;
-		this.f8 = value8;
-		this.f9 = value9;
-		this.f10 = value10;
-		this.f11 = value11;
 	}
 
 
@@ -174,7 +114,7 @@ public class Tuple12<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> extends T
 
 	/**
 	 * Creates a string representation of the tuple in the form
-	 * (f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11),
+	 * (f0, f1, f2, f3, f4, f5),
 	 * where the individual fields are the value returned by calling {@link Object#toString} on that field.
 	 * @return The string representation of the tuple.
 	 */
@@ -186,12 +126,6 @@ public class Tuple12<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> extends T
 			+ "," + StringUtils.arrayAwareToString(this.f3)
 			+ "," + StringUtils.arrayAwareToString(this.f4)
 			+ "," + StringUtils.arrayAwareToString(this.f5)
-			+ "," + StringUtils.arrayAwareToString(this.f6)
-			+ "," + StringUtils.arrayAwareToString(this.f7)
-			+ "," + StringUtils.arrayAwareToString(this.f8)
-			+ "," + StringUtils.arrayAwareToString(this.f9)
-			+ "," + StringUtils.arrayAwareToString(this.f10)
-			+ "," + StringUtils.arrayAwareToString(this.f11)
 			+ ")";
 	}
 
@@ -205,11 +139,11 @@ public class Tuple12<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> extends T
 		if (this == o) {
 			return true;
 		}
-		if (!(o instanceof Tuple12)) {
+		if (!(o instanceof Tuple6)) {
 			return false;
 		}
 		@SuppressWarnings("rawtypes")
-        Tuple12 tuple = (Tuple12) o;
+        Tuple6 tuple = (Tuple6) o;
 		if (f0 != null ? !f0.equals(tuple.f0) : tuple.f0 != null) {
 			return false;
 		}
@@ -228,24 +162,6 @@ public class Tuple12<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> extends T
 		if (f5 != null ? !f5.equals(tuple.f5) : tuple.f5 != null) {
 			return false;
 		}
-		if (f6 != null ? !f6.equals(tuple.f6) : tuple.f6 != null) {
-			return false;
-		}
-		if (f7 != null ? !f7.equals(tuple.f7) : tuple.f7 != null) {
-			return false;
-		}
-		if (f8 != null ? !f8.equals(tuple.f8) : tuple.f8 != null) {
-			return false;
-		}
-		if (f9 != null ? !f9.equals(tuple.f9) : tuple.f9 != null) {
-			return false;
-		}
-		if (f10 != null ? !f10.equals(tuple.f10) : tuple.f10 != null) {
-			return false;
-		}
-		if (f11 != null ? !f11.equals(tuple.f11) : tuple.f11 != null) {
-			return false;
-		}
 		return true;
 	}
 
@@ -257,12 +173,6 @@ public class Tuple12<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> extends T
 		result = 31 * result + (f3 != null ? f3.hashCode() : 0);
 		result = 31 * result + (f4 != null ? f4.hashCode() : 0);
 		result = 31 * result + (f5 != null ? f5.hashCode() : 0);
-		result = 31 * result + (f6 != null ? f6.hashCode() : 0);
-		result = 31 * result + (f7 != null ? f7.hashCode() : 0);
-		result = 31 * result + (f8 != null ? f8.hashCode() : 0);
-		result = 31 * result + (f9 != null ? f9.hashCode() : 0);
-		result = 31 * result + (f10 != null ? f10.hashCode() : 0);
-		result = 31 * result + (f11 != null ? f11.hashCode() : 0);
 		return result;
 	}
 
@@ -272,19 +182,13 @@ public class Tuple12<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> extends T
 	*/
 	@Override
 	@SuppressWarnings("unchecked")
-	public Tuple12<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> copy() {
-		return new Tuple12<>(this.f0,
+	public Tuple6<T0, T1, T2, T3, T4, T5> copy() {
+		return new Tuple6<>(this.f0,
 			this.f1,
 			this.f2,
 			this.f3,
 			this.f4,
-			this.f5,
-			this.f6,
-			this.f7,
-			this.f8,
-			this.f9,
-			this.f10,
-			this.f11);
+			this.f5);
 	}
 
 	/**
@@ -295,18 +199,12 @@ public class Tuple12<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> extends T
 	 * instead of
 	 * {@code new Tuple3<Integer, Double, String>(n, x, s)}
 	 */
-	public static <T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> Tuple12<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11> of(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5, T6 value6, T7 value7, T8 value8, T9 value9, T10 value10, T11 value11) {
-		return new Tuple12<>(value0,
+	public static <T0, T1, T2, T3, T4, T5> Tuple6<T0, T1, T2, T3, T4, T5> of(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5) {
+		return new Tuple6<>(value0,
 			value1,
 			value2,
 			value3,
 			value4,
-			value5,
-			value6,
-			value7,
-			value8,
-			value9,
-			value10,
-			value11);
+			value5);
 	}
 }

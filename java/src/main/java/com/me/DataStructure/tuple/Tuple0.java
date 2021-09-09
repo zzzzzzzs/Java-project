@@ -1,4 +1,4 @@
-package com.me.tuple;
+package com.me.DataStructure.tuple;
 
 import java.io.ObjectStreamException;
 

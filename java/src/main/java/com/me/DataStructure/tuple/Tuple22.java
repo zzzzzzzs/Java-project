@@ -1,8 +1,8 @@
-package com.me.tuple;
+package com.me.DataStructure.tuple;
 
 import com.me.utils.StringUtils;
 
-public class Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> extends Tuple {
+public class Tuple22<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> extends Tuple {
 
 	private static final long serialVersionUID = 1L;
 
@@ -50,13 +50,11 @@ public class Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13,
 	public T20 f20;
 	/** Field 21 of the tuple. */
 	public T21 f21;
-	/** Field 22 of the tuple. */
-	public T22 f22;
 
 	/**
 	 * Creates a new tuple where all fields are null.
 	 */
-	public Tuple23() {}
+	public Tuple22() {}
 
 	/**
 	 * Creates a new tuple and assigns the given values to the tuple's fields.
@@ -83,9 +81,8 @@ public class Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13,
 	 * @param value19 The value for field 19
 	 * @param value20 The value for field 20
 	 * @param value21 The value for field 21
-	 * @param value22 The value for field 22
 	 */
-	public Tuple23(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5, T6 value6, T7 value7, T8 value8, T9 value9, T10 value10, T11 value11, T12 value12, T13 value13, T14 value14, T15 value15, T16 value16, T17 value17, T18 value18, T19 value19, T20 value20, T21 value21, T22 value22) {
+	public Tuple22(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5, T6 value6, T7 value7, T8 value8, T9 value9, T10 value10, T11 value11, T12 value12, T13 value13, T14 value14, T15 value15, T16 value16, T17 value17, T18 value18, T19 value19, T20 value20, T21 value21) {
 		this.f0 = value0;
 		this.f1 = value1;
 		this.f2 = value2;
@@ -108,12 +105,11 @@ public class Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13,
 		this.f19 = value19;
 		this.f20 = value20;
 		this.f21 = value21;
-		this.f22 = value22;
 	}
 
 	@Override
 	public int getArity() {
-		return 23;
+		return 22;
 	}
 
 	@Override
@@ -142,7 +138,6 @@ public class Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13,
 			case 19: return (T) this.f19;
 			case 20: return (T) this.f20;
 			case 21: return (T) this.f21;
-			case 22: return (T) this.f22;
 			default: throw new IndexOutOfBoundsException(String.valueOf(pos));
 		}
 	}
@@ -217,9 +212,6 @@ public class Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13,
 			case 21:
 				this.f21 = (T21) value;
 				break;
-			case 22:
-				this.f22 = (T22) value;
-				break;
 			default: throw new IndexOutOfBoundsException(String.valueOf(pos));
 		}
 	}
@@ -249,9 +241,8 @@ public class Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13,
 	 * @param value19 The value for field 19
 	 * @param value20 The value for field 20
 	 * @param value21 The value for field 21
-	 * @param value22 The value for field 22
 	 */
-	public void setFields(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5, T6 value6, T7 value7, T8 value8, T9 value9, T10 value10, T11 value11, T12 value12, T13 value13, T14 value14, T15 value15, T16 value16, T17 value17, T18 value18, T19 value19, T20 value20, T21 value21, T22 value22) {
+	public void setFields(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5, T6 value6, T7 value7, T8 value8, T9 value9, T10 value10, T11 value11, T12 value12, T13 value13, T14 value14, T15 value15, T16 value16, T17 value17, T18 value18, T19 value19, T20 value20, T21 value21) {
 		this.f0 = value0;
 		this.f1 = value1;
 		this.f2 = value2;
@@ -274,7 +265,6 @@ public class Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13,
 		this.f19 = value19;
 		this.f20 = value20;
 		this.f21 = value21;
-		this.f22 = value22;
 	}
 
 
@@ -284,7 +274,7 @@ public class Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13,
 
 	/**
 	 * Creates a string representation of the tuple in the form
-	 * (f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18, f19, f20, f21, f22),
+	 * (f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18, f19, f20, f21),
 	 * where the individual fields are the value returned by calling {@link Object#toString} on that field.
 	 * @return The string representation of the tuple.
 	 */
@@ -312,7 +302,6 @@ public class Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13,
 			+ "," + StringUtils.arrayAwareToString(this.f19)
 			+ "," + StringUtils.arrayAwareToString(this.f20)
 			+ "," + StringUtils.arrayAwareToString(this.f21)
-			+ "," + StringUtils.arrayAwareToString(this.f22)
 			+ ")";
 	}
 
@@ -326,11 +315,11 @@ public class Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13,
 		if (this == o) {
 			return true;
 		}
-		if (!(o instanceof Tuple23)) {
+		if (!(o instanceof Tuple22)) {
 			return false;
 		}
 		@SuppressWarnings("rawtypes")
-        Tuple23 tuple = (Tuple23) o;
+        Tuple22 tuple = (Tuple22) o;
 		if (f0 != null ? !f0.equals(tuple.f0) : tuple.f0 != null) {
 			return false;
 		}
@@ -397,9 +386,6 @@ public class Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13,
 		if (f21 != null ? !f21.equals(tuple.f21) : tuple.f21 != null) {
 			return false;
 		}
-		if (f22 != null ? !f22.equals(tuple.f22) : tuple.f22 != null) {
-			return false;
-		}
 		return true;
 	}
 
@@ -427,7 +413,6 @@ public class Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13,
 		result = 31 * result + (f19 != null ? f19.hashCode() : 0);
 		result = 31 * result + (f20 != null ? f20.hashCode() : 0);
 		result = 31 * result + (f21 != null ? f21.hashCode() : 0);
-		result = 31 * result + (f22 != null ? f22.hashCode() : 0);
 		return result;
 	}
 
@@ -437,8 +422,8 @@ public class Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13,
 	*/
 	@Override
 	@SuppressWarnings("unchecked")
-	public Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> copy() {
-		return new Tuple23<>(this.f0,
+	public Tuple22<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> copy() {
+		return new Tuple22<>(this.f0,
 			this.f1,
 			this.f2,
 			this.f3,
@@ -459,8 +444,7 @@ public class Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13,
 			this.f18,
 			this.f19,
 			this.f20,
-			this.f21,
-			this.f22);
+			this.f21);
 	}
 
 	/**
@@ -471,8 +455,8 @@ public class Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13,
 	 * instead of
 	 * {@code new Tuple3<Integer, Double, String>(n, x, s)}
 	 */
-	public static <T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22> of(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5, T6 value6, T7 value7, T8 value8, T9 value9, T10 value10, T11 value11, T12 value12, T13 value13, T14 value14, T15 value15, T16 value16, T17 value17, T18 value18, T19 value19, T20 value20, T21 value21, T22 value22) {
-		return new Tuple23<>(value0,
+	public static <T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> Tuple22<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21> of(T0 value0, T1 value1, T2 value2, T3 value3, T4 value4, T5 value5, T6 value6, T7 value7, T8 value8, T9 value9, T10 value10, T11 value11, T12 value12, T13 value13, T14 value14, T15 value15, T16 value16, T17 value17, T18 value18, T19 value19, T20 value20, T21 value21) {
+		return new Tuple22<>(value0,
 			value1,
 			value2,
 			value3,
@@ -493,7 +477,6 @@ public class Tuple23<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13,
 			value18,
 			value19,
 			value20,
-			value21,
-			value22);
+			value21);
 	}
 }
