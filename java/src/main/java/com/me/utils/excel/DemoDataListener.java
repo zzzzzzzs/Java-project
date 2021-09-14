@@ -2,16 +2,13 @@ package com.me.utils.excel;
 
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
-import com.alibaba.excel.exception.ExcelDataConvertException;
 import com.alibaba.fastjson.JSON;
 import com.me.bean.DemoData;
+import com.me.bean.JstOrderDetailReportEntity;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * 读取头
@@ -19,12 +16,12 @@ import java.util.Map;
  * @author Jiaju Zhuang
  */
 @Slf4j
-public class DemoDataListener extends AnalysisEventListener<DemoData> {
+public class DemoDataListener extends AnalysisEventListener<JstOrderDetailReportEntity> {
     /**
      * 每隔5条存储数据库，实际使用中可以3000条，然后清理list ，方便内存回收
      */
-    private static final int BATCH_COUNT = 5;
-    List<DemoData> list = new ArrayList<>();
+    private static final int BATCH_COUNT = 3000;
+    List<JstOrderDetailReportEntity> list = new ArrayList<>();
 
     /**
      * 这个每一条数据解析都会来调用
@@ -34,7 +31,7 @@ public class DemoDataListener extends AnalysisEventListener<DemoData> {
      * @param context
      */
     @Override
-    public void invoke(DemoData data, AnalysisContext context) {
+    public void invoke(JstOrderDetailReportEntity data, AnalysisContext context) {
         log.info("解析到一条数据:{}", JSON.toJSONString(data));
         list.add(data);
         // 达到BATCH_COUNT了，需要去存储一次数据库，防止数据几万条数据在内存，容易OOM
