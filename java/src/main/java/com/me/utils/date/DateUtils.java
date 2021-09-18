@@ -186,7 +186,7 @@ public class DateUtils {
     }
 
     public static void main(String[] args) {
-        int week = getWeek("2021-08-10");
+        int week = calcDayOffset("2021-07-01", "2021-07-31");
         System.out.println(week);
     }
 }
