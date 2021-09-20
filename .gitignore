@@ -15,8 +15,9 @@ buildNumber.properties
 
 **/.mvn
 **/target/
+**/*.iml
 
 # 同级的.idea
 .idea
-*.iml
 *.baiduyun.uploading.cfg
+out

@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * @author zs
  * @date 2021/8/27.
-  首字母一定要小写
+  首字母一定要小写，否则easyexcel不能识别
  */
 
 @Data
