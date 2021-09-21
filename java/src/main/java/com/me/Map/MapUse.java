@@ -11,6 +11,38 @@ import java.util.*;
  map使用方法
  */
 public class MapUse {
+    // TODO  hashmap 使用lamdba表达式删除元素
+    @Test
+    public void MapRemove2(){
+        Map<String, Integer> map = new HashMap<>();
+        map.put("a", 1);
+        map.put("b", 2);
+        map.put("c", 3);
+        map.put("d", 4);
+        map.entrySet().removeIf(entry -> entry.getValue() % 2 == 0);
+        System.out.println(map);
+    }
+
+    // TODO  hashmap 删除元素
+    @Test
+    public void MapRemove1(){
+        Map<String, Integer> map = new HashMap<>();
+        map.put("a", 1);
+        map.put("b", 2);
+        map.put("c", 3);
+        map.put("d", 4);
+
+        Iterator<Map.Entry<String, Integer>> iterator = map.entrySet().iterator();
+        Map.Entry<String, Integer> entry;
+        while (iterator.hasNext()) {
+            entry = iterator.next();
+            if (entry.getValue() % 2 == 0) {
+                iterator.remove();
+            }
+        }
+        System.out.println(map);
+    }
+
     @Test
     public void MapIter3(){
         HashMap<Integer, Person> map= new HashMap<>();
