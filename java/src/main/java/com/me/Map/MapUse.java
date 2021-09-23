@@ -1,9 +1,12 @@
 package com.me.Map;
 
 import com.me.bean.Person;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 /**
  * @author zs
@@ -11,6 +14,59 @@ import java.util.*;
  map使用方法
  */
 public class MapUse {
+
+    @Data
+    @AllArgsConstructor
+    static class StudentScore {
+        private Integer sid;
+        private String scoreName;
+        private Integer score;
+    }
+
+    //传统写法
+    public static Map<Integer, Integer> sum1(List<StudentScore> list) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (StudentScore studentScore : list) {
+            if (map.containsKey(studentScore.getSid())) {
+                map.put(studentScore.getSid(),
+                        map.get(studentScore.getSid()) + studentScore.getScore());
+            } else {
+                map.put(studentScore.getSid(), studentScore.getScore());
+            }
+        }
+        return map;
+    }
+    //merger写法
+    public static Map<Integer, Integer> sum2(List<StudentScore> list) {
+        Map<Integer, Integer> map = new HashMap<>();
+        list.stream().forEach(studentScore -> map.merge(studentScore.getSid()
+                , studentScore.getScore(), Integer::sum));
+        return map;
+    }
+    // TODO  map merge
+    @Test
+    public void MapMerge(){
+        List<StudentScore> list = new ArrayList<>();
+        list.add(new StudentScore(1, "chinese", 110));
+        list.add(new StudentScore(1, "english", 120));
+        list.add(new StudentScore(1, "math", 135));
+        list.add(new StudentScore(2, "chinese", 99));
+        list.add(new StudentScore(2, "english", 100));
+        list.add(new StudentScore(2, "math", 133));
+        list.add(new StudentScore(3, "chinese", 88));
+        list.add(new StudentScore(3, "english", 140));
+        list.add(new StudentScore(3, "math", 90));
+        list.add(new StudentScore(4, "chinese", 108));
+        list.add(new StudentScore(4, "english", 123));
+        list.add(new StudentScore(4, "math", 114));
+        list.add(new StudentScore(5, "chinese", 116));
+        list.add(new StudentScore(5, "english", 133));
+        list.add(new StudentScore(5, "math", 135));
+
+        System.out.println(sum1(list));
+        System.out.println(sum2(list));
+    }
+
     // TODO  hashmap 使用lamdba表达式删除元素
     @Test
     public void MapRemove2(){
