@@ -28,7 +28,7 @@ public class HutoolFile {
 //    }
     public static void main(String[] args) {
         //默认UTF-8编码，可以在构造中传入第二个参数做为编码
-        FileReader fileReader = new FileReader("C:\\Users\\simeitol\\Desktop\\asdada.txt");
+        FileReader fileReader = new FileReader("C:\\Users\\simeitol\\Desktop\\4691356588028769090.txt");
         List<String> lines = fileReader.readLines();
         for (String ele:lines) {
 //            if (!ele.equals("") && ele.contains(":")) {
