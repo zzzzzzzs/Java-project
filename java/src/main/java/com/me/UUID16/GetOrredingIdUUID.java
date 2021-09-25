@@ -1,5 +1,7 @@
 package com.me.UUID16;
 
+import org.junit.Test;
+
 import java.util.Random;
 import java.util.UUID;
 
@@ -9,7 +11,6 @@ import java.util.UUID;
 java 生成 16 位 ID
  */
 public class GetOrredingIdUUID {
-
     public static String getOrderIdByUUId() {
         int first = new Random(10).nextInt(8) + 1;
         System.out.println(first);
@@ -23,8 +24,16 @@ public class GetOrredingIdUUID {
         return first + String.format("%015d", hashCodeV);
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void uuid(){
         String orderingID = getOrderIdByUUId();
         System.out.println(orderingID);
     }
+
+    @Test
+    public void uuid1(){
+        long id = Thread.currentThread().getId();
+        System.out.println(id);
+    }
+
 }
