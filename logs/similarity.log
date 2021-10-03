@@ -1,0 +1,4 @@
+2021-09-30 16:30:28,523 [main] INFO  o.x.s.word.clin.CilinDictionary [Line:65 ] - loading cilin dictionary...
+2021-09-30 16:30:29,015 [main] INFO  o.x.s.word.clin.CilinDictionary [Line:68 ] - loading ciling dictionary complete! time spend:457ms
+2021-09-30 16:30:29,243 [main] INFO  o.x.s.w.hownet.sememe.SememeParser [Line:71 ] - complete! count num:1736. time spend:178ms
+2021-09-30 16:30:29,945 [main] INFO  o.x.s.w.hownet.concept.ConceptParser [Line:100] - complete! count num:66191，time spend:689ms

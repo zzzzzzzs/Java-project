@@ -1,0 +1,16 @@
+2021-09-30 16:31:58,820 [main] INFO  o.x.s.w.hownet.sememe.SememeParser [Line:71 ] - complete! count num:1736. time spend:89ms
+2021-09-30 16:31:59,349 [main] INFO  o.x.s.w.hownet.concept.ConceptParser [Line:100] - complete! count num:66191，time spend:523ms
+2021-09-30 16:33:56,887 [main] INFO  o.x.s.w.hownet.sememe.SememeParser [Line:71 ] - complete! count num:1736. time spend:65ms
+2021-09-30 16:33:57,383 [main] INFO  o.x.s.w.hownet.concept.ConceptParser [Line:100] - complete! count num:66191，time spend:490ms
+2021-09-30 16:34:25,903 [main] INFO  o.x.s.w.hownet.sememe.SememeParser [Line:71 ] - complete! count num:1736. time spend:83ms
+2021-09-30 16:34:26,427 [main] INFO  o.x.s.w.hownet.concept.ConceptParser [Line:100] - complete! count num:66191，time spend:518ms
+2021-09-30 16:39:54,258 [main] INFO  o.x.s.w.hownet.sememe.SememeParser [Line:71 ] - complete! count num:1736. time spend:126ms
+2021-09-30 16:39:54,751 [main] INFO  o.x.s.w.hownet.concept.ConceptParser [Line:100] - complete! count num:66191，time spend:488ms
+2021-09-30 16:44:24,383 [main] INFO  o.x.s.w.hownet.sememe.SememeParser [Line:71 ] - complete! count num:1736. time spend:73ms
+2021-09-30 16:44:24,788 [main] INFO  o.x.s.w.hownet.concept.ConceptParser [Line:100] - complete! count num:66191，time spend:401ms
+2021-09-30 16:59:46,466 [main] INFO  o.x.s.w.hownet.sememe.SememeParser [Line:71 ] - complete! count num:1736. time spend:83ms
+2021-09-30 16:59:46,898 [main] INFO  o.x.s.w.hownet.concept.ConceptParser [Line:100] - complete! count num:66191，time spend:428ms
+2021-09-30 17:01:18,416 [main] INFO  o.x.s.w.hownet.sememe.SememeParser [Line:71 ] - complete! count num:1736. time spend:89ms
+2021-09-30 17:01:18,844 [main] INFO  o.x.s.w.hownet.concept.ConceptParser [Line:100] - complete! count num:66191，time spend:422ms
+2021-09-30 17:01:31,592 [main] INFO  o.x.s.w.hownet.sememe.SememeParser [Line:71 ] - complete! count num:1736. time spend:70ms
+2021-09-30 17:01:32,042 [main] INFO  o.x.s.w.hownet.concept.ConceptParser [Line:100] - complete! count num:66191，time spend:446ms
