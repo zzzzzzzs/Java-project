@@ -15,5 +15,11 @@ public class ClassLoaderDemo {
         System.out.println(d01.getClass().getClassLoader().getParent().getParent()); //null
         System.out.println(d01.getClass().getClassLoader().getParent()); // sun.misc.Launcher$ExtClassLoader@5b6f7412
         System.out.println(d01.getClass().getClassLoader()); // sun.misc.Launcher$AppClassLoader@18b4aac2
+
+        /* TODO Java代码运行到这一行，线程起来没有？
+                不确定起没起，线程不是Java程序起的。线程和进程是操作系统决定的。
+         */
+
+        new Thread().start();
     }
 }
