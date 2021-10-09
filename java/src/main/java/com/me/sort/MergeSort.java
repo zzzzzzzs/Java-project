@@ -1,5 +1,7 @@
 package com.me.sort;
 
+import java.util.Arrays;
+
 /**
  * @author zs
  * @date 2021/10/7.
@@ -29,6 +31,7 @@ public class MergeSort {
         int mid = (first + last) / 2;
         divide(array, first, mid);
         divide(array, mid + 1, last);
+//        Arrays.sort();
     }
 
 
