@@ -23,14 +23,13 @@ public class MergeSort {
         divide(nums, 0, nums.length);
     }
 
-    private static void divide(int[] array, int first, int last) {
-        if (first >= last){
-            System.out.println(first +"," +last);
+    private static void divide(int[] array, int start, int end) {
+        if (array == null || start >= end) {
             return;
         }
-        int mid = (first + last) / 2;
-        divide(array, first, mid);
-        divide(array, mid + 1, last);
+        int mid = (start + end) / 2;
+        divide(array, start, mid);
+        divide(array, mid + 1, end);
 //        Arrays.sort();
     }
 
