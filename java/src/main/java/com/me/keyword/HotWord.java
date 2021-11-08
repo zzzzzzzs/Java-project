@@ -31,7 +31,7 @@ public class HotWord {
             @SneakyThrows
             @Override
             public void accept(String line) {
-                List<String> splits = KeywordUtil.analyze(line);
+                List<String> splits = IKwordUtil.analyze(line);
                 for (String ss : splits) {
                     if (hotWordSet.contains(ss)) {
                         System.out.println(line + "包含热词:" + ss);

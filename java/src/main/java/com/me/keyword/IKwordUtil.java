@@ -13,7 +13,7 @@ import java.util.List;
  * @date 2021/10/30
  * 分词工具类
  */
-public class KeywordUtil {
+public class IKwordUtil {
     public static List<String> analyze(String text) throws IOException {
         List keywordList = new ArrayList();
         IKSegmenter ikSegmenter = new IKSegmenter(new StringReader(text), true);
@@ -25,7 +25,7 @@ public class KeywordUtil {
     }
 
     public static void main(String[] args) throws IOException {
-        List<String> list = analyze("中国人民大学");
+        List<String> list = analyze("动漫迷");
         System.out.println(list);
     }
 }

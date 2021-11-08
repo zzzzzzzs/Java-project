@@ -21,3 +21,4 @@ buildNumber.properties
 .idea
 *.baiduyun.uploading.cfg
 out
+logs
