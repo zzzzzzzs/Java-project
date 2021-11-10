@@ -1,6 +1,9 @@
 package com.me.keyword;
 
 import org.apdplat.word.WordSegmenter;
+import org.apdplat.word.dictionary.Dictionary;
+import org.apdplat.word.dictionary.DictionaryFactory;
+import org.apdplat.word.recognition.StopWord;
 import org.apdplat.word.segmentation.Word;
 
 import java.net.URL;
@@ -35,10 +38,13 @@ public class WordUtils {
             System.out.println("花费：" + cost + "----" + word1);
         }
     }
-
+    private static void test3() {
+        Dictionary dictionary = DictionaryFactory.getDictionary();
+    }
     public static void main(String[] args) {
         test1("不合情理");
-        test2("不合情理");
+//        test2("不合情理");
+//        test3();
     }
 }
 

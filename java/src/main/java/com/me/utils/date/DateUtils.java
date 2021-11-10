@@ -92,17 +92,19 @@ public class DateUtils {
     public static Integer betweenWeek(String start, String end) {
         DateTime startParse = DateUtil.parseDate(start);
         DateTime endParse = DateUtil.parseDate(end);
+        // TODO 换了hutool版本，还没来得及改
         // 此函数的结束时间必须是周日才算1周
-        int weekCount = DateUtil.weekCount(startParse, endParse);
+//        int weekCount = DateUtil.weekCount(startParse, endParse);
         // 如果不满一周，也算一周
-        if (weekCount == 0) {
-            return 1;
-        }
-        // 如果结束时间不是周日，也算一周
-        if (weekCount != 0 && DateUtil.dayOfWeekEnum(endParse) != Week.SUNDAY) {
-            ++weekCount;
-        }
-        return weekCount;
+//        if (weekCount == 0) {
+//            return 1;
+//        }
+//        // 如果结束时间不是周日，也算一周
+//        if (weekCount != 0 && DateUtil.dayOfWeekEnum(endParse) != Week.SUNDAY) {
+//            ++weekCount;
+//        }
+//        return weekCount;
+        return 0;
     }
     /**
      * http://www.cnblogs.com/0201zcr/p/5000977.html
