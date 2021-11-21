@@ -7,20 +7,11 @@ import java.util.function.Supplier;
  */
 public class Test10 {
 
-    Supplier<Integer> a = () -> 10 + 1;
-    public void add(Byte b) {
-        b = b++;
-    }
-    public void test() {
-        Byte a = 127;
-        Byte b = 127;
-        add(++a);
-        System.out.println(a + "");
-        add(b);
-        System.out.println(b + "");
-    }
-
-    public static void main(String[] args) {
-        new Test10().test();
+    public static void main(String[] args) throws InterruptedException {
+        int a = 1;
+        while (a==1){
+            System.out.println(a);
+            Thread.sleep(1000);
+        }
     }
 }
