@@ -6,20 +6,9 @@ import javax.swing.plaf.basic.BasicTabbedPaneUI;
 
  */
 public class Test9 {
-
-    public void add(Byte b) {
-        b = b++;
-    }
-    public void test() {
-        Byte a = 127;
-        Byte b = 127;
-        add(++a);
-        System.out.println(a + "");
-        add(b);
-        System.out.println(b + "");
-    }
-
-    public static void main(String[] args) {
-        new Test9().test();
+    public static void main(String[] args) throws InterruptedException {
+        long start = System.currentTimeMillis();
+        Thread.sleep(1000);
+        System.out.println(System.currentTimeMillis() - start);
     }
 }
