@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class MenuTest {
     public static void main(String[] args) {
-// 构建node列表
+        // 构建node列表
         List<TreeNode<String>> nodeList = CollUtil.newArrayList();
 
         nodeList.add(new TreeNode<>("1", "0", "系统管理", 5));
