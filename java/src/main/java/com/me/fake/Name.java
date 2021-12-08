@@ -1,4 +1,4 @@
-package com.me.Fakers;
+package com.me.fake;
 
 import com.github.javafaker.Faker;
 
