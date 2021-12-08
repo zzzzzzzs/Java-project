@@ -1,4 +1,4 @@
-package com.me.utils.file;
+package com.me.file;
 
 import cn.hutool.core.io.file.FileReader;
 import com.alibaba.fastjson.JSON;
