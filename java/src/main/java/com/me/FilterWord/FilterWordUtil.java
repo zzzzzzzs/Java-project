@@ -48,6 +48,7 @@ public class FilterWordUtil {
                 "辰颐物语公司出台新政策啦，加盟水果老板之前不是交338嘛，现在有第二个通道，现在免费加盟[呲牙] \n" +
                 "\n" +
                 "吃过我们水果的朋友我优先来通知，现在有100多个品种，要办个会员吗？";
+        // 从文件中读取过滤词
         FileReader fileReader = new FileReader("filter-word.txt");
         List<String> list = fileReader.readLines();
         List<String> filterWordList = new ArrayList<>();
