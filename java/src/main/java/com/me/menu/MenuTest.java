@@ -6,6 +6,7 @@ import cn.hutool.core.lang.tree.TreeNode;
 import cn.hutool.core.lang.tree.TreeNodeConfig;
 import cn.hutool.core.lang.tree.TreeUtil;
 import com.alibaba.fastjson.JSON;
+import net.sf.jsqlparser.expression.operators.relational.OldOracleJoinBinaryExpression;
 
 import java.util.List;
 
@@ -55,9 +56,11 @@ public class MenuTest {
                     tree.putExtra("other", new Object());
                 });
 
-//        treeNodes.forEach(e -> System.out.println(e.getName()));
-        String json = JSON.toJSONString(treeNodes);
-        System.out.println(json);
+        Tree<Object> objectTree = TreeUtil.buildSingle(nodeList, 0);
+        Tree<Object> node = objectTree.getNode(1);
+        System.out.println(node);
+//        String json = JSON.toJSONString(treeNodes);
+//        System.out.println(json);
 
 //        List<Tree<String>> build = TreeUtil.build(nodeList, "0");
 //        System.out.println(build);
