@@ -1,4 +1,4 @@
-package com.me.Singleton;
+package com.me.DesignPatterns.Singleton;
 
 public class App {
     public static void main(String[] args) {

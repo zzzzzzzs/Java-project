@@ -1,4 +1,4 @@
-package com.me.Singleton;
+package com.me.DesignPatterns.Singleton;
 
 
 // TODO 懒汉式--单例  好处是节省内存（但是无所谓，区别不大），使用的时候才构造，可以在初始化的时候做一些事情，线程不安全，需要加锁
