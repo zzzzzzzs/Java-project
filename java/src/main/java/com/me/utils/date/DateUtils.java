@@ -187,8 +187,24 @@ public class DateUtils {
         return ((week - 1) == 0) ? 7 : (week - 1);
     }
 
+    /*
+     * 判断日期是否合法
+     * 只能是 2021-10
+     **/
+    public static boolean isValidDate(String strDate) {
+        try{
+            if(strDate.split("-").length != 2){
+                return false;
+            }
+            DateUtil.parse(strDate, "yyyy-MM");
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
-        int week = calcDayOffset("2021-07-01", "2021-07-31");
-        System.out.println(week);
+        boolean validDate = isValidDate("2019-13");
+        System.out.println(validDate);
     }
 }
