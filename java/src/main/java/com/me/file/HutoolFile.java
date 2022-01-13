@@ -50,13 +50,12 @@ public class HutoolFile {
 
     public static void main(String[] args) {
         //默认UTF-8编码，可以在构造中传入第二个参数做为编码
-        FileReader fileReader = new FileReader("C:\\Users\\simeitol\\Desktop\\simeitolPARAM_FORM_ERROR2021-10-28.txt");
-        String ss = fileReader.readString();
-        JSONArray objects = JSON.parseArray(ss);
-        for (int i = 0; i < objects.size(); i++) {
-            //通过数组下标取到object，使用强转转为JSONObject，之后进行操作
-            JSONObject object = (JSONObject) objects.get(i);
-            System.out.println(object);
+        FileReader fileReader = new FileReader("C:\\Users\\simeitol\\Desktop\\1.txt");
+        List<String> list = fileReader.readLines();
+        for (int i = 0; i < list.size(); i++) {
+            if (i % 4 == 3) {
+                System.out.println(list.get(i));
+            }
         }
     }
 }

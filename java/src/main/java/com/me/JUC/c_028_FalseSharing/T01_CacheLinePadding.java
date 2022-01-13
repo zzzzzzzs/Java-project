@@ -3,6 +3,7 @@ package com.me.JUC.c_028_FalseSharing;
 /**
  * @author zs
  * @date 2022/1/11
+ * 缓存行
  */
 public class T01_CacheLinePadding {
     private static class T {
