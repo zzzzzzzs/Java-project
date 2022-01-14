@@ -4,13 +4,17 @@ import com.google.common.base.Stopwatch;
 
 /**
  * @author zs
- * @date 2022/1/11
- * 缓存行
+ * @date 2022/1/14
  */
-public class T01_CacheLinePadding {
-    // 在内存中有一个 T 对象，在 T 对象中有一个 x ，x 是 long 类型，8bytes。一个缓存行是64bytes。
+public class T03_CacheLinePadding {
+
+    /**
+     * 前后都做了填充，这样确保了 x 在临近的缓存行中都可以获取到。
+     */
     private static class T {
-        public volatile long x = 0L;
+        public long p1, p2, p3, p4, p5, p6, p7;
+        public long x = 0L;
+        public long p9, p10, p11, p12, p13, p14, p15;
     }
 
     public static T[] arr = new T[2];
