@@ -10,6 +10,5 @@ public class HelloJOL {
         synchronized (o) {
             System.out.println(ClassLayout.parseInstance(o).toPrintable());
         }
-
     }
 }
