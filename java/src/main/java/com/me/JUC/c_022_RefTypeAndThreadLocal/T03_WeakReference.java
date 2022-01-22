@@ -14,9 +14,10 @@ public class T03_WeakReference {
         System.out.println(m.get());
         System.gc();
         System.out.println(m.get());
-
+        // 线程本地变量，线程存在，这个对象就存在
         ThreadLocal<M> tl = new ThreadLocal<>();
         tl.set(new M());
+        // 如果不用，必须 remove，否则回收不掉
         tl.remove();
    }
 }
