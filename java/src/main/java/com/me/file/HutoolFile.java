@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -53,16 +54,9 @@ public class HutoolFile {
         //默认UTF-8编码，可以在构造中传入第二个参数做为编码
         FileReader fileReader = new FileReader("C:\\Users\\simeitol\\Desktop\\1.txt");
         List<String> list = fileReader.readLines();
-        for (String ss : list) {
-            String[] split = ss.split("\t");
-            if(split[0].contains("varchar")){
-                String format = StrUtil.format("{}({})", split[0], split[1]);
-                System.out.println(format);
-            }else if(split[0].contains("numeric")){
-                String format = StrUtil.format("{}({},{})", split[0], split[1], split[2]);
-                System.out.println(format);
-            }else {
-                System.out.println(split[0]);
+        for (int i = 0; i < list.size(); i++) {
+            if(i % 4 ==2){
+                System.out.println(list.get(i));
             }
         }
     }

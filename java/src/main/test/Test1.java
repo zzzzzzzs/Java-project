@@ -11,7 +11,9 @@ import java.net.URL;
  */
 public class Test1 {
     public static void main(String[] args) {
-        System.out.println("\u03bcs");
+        for (int i = 0; i < 17; i++) {
+            System.out.println(i);
+        }
     }
 }
 
