@@ -151,8 +151,14 @@ public class OSFileIO {
   // 测试 allocate，看看是不是 on heap -> off heap
   public static void testAllocate() throws IOException {
     RandomAccessFile raf = new RandomAccessFile(path, "rw");
+    FileChannel channel = raf.getChannel();
+    MappedByteBuffer map = channel.map(FileChannel.MapMode.READ_WRITE, 0, 4096);
     while (true) {
-      raf.write("12345678".getBytes());
+      map.put("12345678".getBytes());
+      if (map.limit() == 4000) {
+        channel.force(false);
+        map.clear();
+      }
     }
   }
 }
