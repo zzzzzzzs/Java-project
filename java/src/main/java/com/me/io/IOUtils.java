@@ -50,7 +50,7 @@ public class IOUtils {
     return new BufferedReader(new InputStreamReader(inputStream));
   }
 
-  public static void deSomeWork() throws InterruptedException {
+  public static void doSomeWork() throws InterruptedException {
     Thread.sleep(500);
   }
 }

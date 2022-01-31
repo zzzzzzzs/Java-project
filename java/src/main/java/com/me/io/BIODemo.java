@@ -3,7 +3,7 @@ import static com.me.io.IOUtils.BACK_LOG;
 import static com.me.io.IOUtils.DEFAULT_PORT;
 import static com.me.io.IOUtils.buildBufferedWriter;
 import static com.me.io.IOUtils.buildHttpResp;
-import static com.me.io.IOUtils.deSomeWork;
+import static com.me.io.IOUtils.doSomeWork;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -26,7 +26,7 @@ public class BIODemo {
       System.out.println(socket.getRemoteSocketAddress());
       OutputStream outputStream = socket.getOutputStream();
       BufferedWriter bufferedWriter = buildBufferedWriter(outputStream);
-      deSomeWork();
+      doSomeWork();
       bufferedWriter.write(buildHttpResp());
       bufferedWriter.flush();
     }
