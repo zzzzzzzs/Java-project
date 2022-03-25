@@ -12,14 +12,44 @@ import java.util.ArrayList;
  */
 public class CollectionTest {
 
-    ArrayList<Integer> list1 = new ArrayList<>();
-    ArrayList<Integer> list2 = new ArrayList<>();
+    ArrayList<String> list1 = new ArrayList<>();
+    ArrayList<String> list2 = new ArrayList<>();
     @Before
     public void initFunc(){
-        list1.add(1);
-        list1.add(2);
-        list2.add(1);
-        list2.add(3);
+        list1.add("fjc306015018-wxid_7gd1lbktg5sl22");
+        list1.add("wxid_25u83h9s28ou22-wxid_klvfiaekma9k21");
+        list1.add("wxid_25u83h9s28ou22-wxid_pcbimrp1sgci22");
+        list1.add("wxid_25u83h9s28ou22-wxid_xw501w9n968o22");
+        list1.add("wxid_275odsysygf41-wxid_7gd1lbktg5sl22");
+        list1.add("wxid_4kndov2uaxad21-wxid_7gd1lbktg5sl22");
+        list1.add("wxid_7gd1lbktg5sl22-wxid_88j3kuop4m5t21");
+        list1.add("wxid_7gd1lbktg5sl22-wxid_dx3y6yca93r522");
+        list1.add("wxid_7gd1lbktg5sl22-wxid_hmykigknsx5g21");
+        list1.add("wxid_7gd1lbktg5sl22-wxid_qjsy43mhe2je22");
+        list1.add("wxid_7gd1lbktg5sl22-wxid_xlrpxqn31mr811");
+        list1.add("wxid_7gd1lbktg5sl22-yeai72");
+        list1.add("wxid_h7opxog826j422-wxid_wf4usdpkdfy712");
+        list1.add("wxid_omvd1erqfixe22-wxid_wf4usdpkdfy712");
+        list1.add("wxid_u3xsuisi9gxb22-wxid_wf4usdpkdfy712");
+        list1.add("wxid_wc7cqg20lsmo12-wxid_wf4usdpkdfy712");
+
+        list2.add("wxid_275odsysygf41-wxid_7gd1lbktg5sl22");
+        list2.add("wxid_7gd1lbktg5sl22-wxid_88j3kuop4m5t21");
+        list2.add("wxid_u3xsuisi9gxb22-wxid_wf4usdpkdfy712");
+        list2.add("wxid_7gd1lbktg5sl22-wxid_dx3y6yca93r522");
+        list2.add("wxid_25u83h9s28ou22-wxid_pcbimrp1sgci22");
+        list2.add("wxid_wc7cqg20lsmo12-wxid_wf4usdpkdfy712");
+        list2.add("wxid_h7opxog826j422-wxid_wf4usdpkdfy712");
+        list2.add("wxid_25u83h9s28ou22-wxid_xw501w9n968o22");
+        list2.add("wxid_omvd1erqfixe22-wxid_wf4usdpkdfy712");
+        list2.add("wxid_7gd1lbktg5sl22-wxid_qjsy43mhe2je22");
+        list2.add("wxid_25u83h9s28ou22-wxid_klvfiaekma9k21");
+
+
+//        list1.add(1);
+//        list1.add(2);
+//        list2.add(1);
+//        list2.add(3);
     }
 
 

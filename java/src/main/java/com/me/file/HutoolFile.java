@@ -55,7 +55,7 @@ public class HutoolFile {
         FileReader fileReader = new FileReader("C:\\Users\\simeitol\\Desktop\\1.txt");
         List<String> list = fileReader.readLines();
         for (int i = 0; i < list.size(); i++) {
-            if(i % 4 ==2){
+            if(i % 4 ==3){
                 System.out.println(list.get(i));
             }
         }

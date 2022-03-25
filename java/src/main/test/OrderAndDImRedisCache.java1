@@ -1,0 +1,57 @@
+import com.alibaba.fastjson.JSONObject;
+import com.ishansong.bigdata.constant.ConstantConf;
+
+import com.ishansong.bigdata.eagle.orderwide.func.AccountToRedisProcessFunction;
+import com.ishansong.bigdata.eagle.orderwide.func.OrderWideRedisCacheProcessFunction;
+import com.ishansong.bigdata.eagle.orderwide.func.DimProcessFunction;
+import com.ishansong.bigdata.util.*;
+import lombok.extern.slf4j.Slf4j;
+
+import org.apache.flink.streaming.api.datastream.DataStreamSource;
+import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
+import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+
+
+import static com.ishansong.bigdata.constant.ConstantConf.*;
+@Slf4j
+public class OrderAndDImRedisCache {
+    public static void main(String[] args) throws Exception {
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        Flink12Util.setCheckpoint(env);
+        //env.setParallelism(1);
+        //DataStreamSource<String> kafkaOrderStream = env.readTextFile("data/kafka.log");
+        //一、缓存order相关字段到redis---------------------------------------------
+        //DataStreamSource<String> kafkaDs = env.readTextFile("data/kafka.log");
+
+        long startTime = System.currentTimeMillis()-DateTimeUtil.ONE_MIN_TIME_STAMP*10;//-2*60*1000L
+        DataStreamSource<String> kafkaDsOrder = env.addSource(Flink12Util.getFlinkKafkaConsumerWithTimeStamp(kafkaServersMq1,ConstantConf.kafkaOrderTopics, "eagle3_eye_map_orders_redis_cache",startTime));
+        SingleOutputStreamOperator<JSONObject> mapDsOrder = kafkaDsOrder.map(Flink12Util::kafkaLogParseJSON);
+
+        //将非首次支付的订单 构建一条订单消息发送至kafka
+        mapDsOrder
+                .process(new OrderWideRedisCacheProcessFunction())//定时更新redis中的映射关系
+                .uid("orderDetailRedisCache_toRedis")
+                .name("orderDetailRedisCache_toRedis")
+                .addSink(Flink12Util.getFlinkKafkaProducer(kafkaServersMq3,"eagle_eye_map_not_first_pay_topic"))
+                .uid("not_first_pay_tokafka")
+                .name("not_first_pay_tokafka");
+
+
+
+        //二、缓存用户维度相关字段到redis---------------------------------------------
+        DataStreamSource<String> kafkaDs = env.addSource(Flink12Util.getFlinkKafkaConsumerWithTimeStamp(kafkaServersMq1,dimKafkaTopics, "eagle3_eye_map_dim_redis_cache",startTime));
+        SingleOutputStreamOperator<JSONObject> mapDs = kafkaDs.map(Flink12Util::kafkaLogParseJSON);
+
+        mapDs.process(new DimProcessFunction())
+                .uid("dimRedisCache_toRedis")
+                .name("dimRedisCache_toRedis");
+
+        // 三、缓存 财务表 相关字段到redis topic:canal_monitor_pay
+        DataStreamSource<String> kafkaAccounts = env.addSource(Flink12Util.getFlinkKafkaConsumerWithTimeStamp(kafkaServersMq1, kafkaAccountTopics, "eagle3_eye_map_account_redis_cache",startTime));
+        SingleOutputStreamOperator<JSONObject> mapAccounts = kafkaAccounts.map(Flink12Util::kafkaLogParseJSON);
+        mapAccounts.process(new AccountToRedisProcessFunction())
+                .uid("accountRedisCache_toRedis")
+                .name("accountRedisCache_toRedis");
+        env.execute(OrderAndDImRedisCache.class.getName());
+    }
+}
