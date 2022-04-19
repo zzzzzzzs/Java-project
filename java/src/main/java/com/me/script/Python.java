@@ -4,7 +4,7 @@ package com.me.script;
  * @author zs
  * @date 2022/4/19
  */
-public class Shell {
+public class Python {
   // 调用python脚本
   public static void python(String[] args) {
     try {
