@@ -1,20 +1,19 @@
-import cn.hutool.core.date.DateTime;
-import cn.hutool.core.date.DateUtil;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import org.apache.commons.collections4.OrderedMap;
+import org.apache.commons.collections4.map.ListOrderedMap;
 
 /**
  * @author zs
- *@date 2021/9/14.
-
+ * @date 2021/9/14.
  */
 public class Test2 {
-
-    public static void main(String[] args) {
-        DateTime time = DateUtil.parse("2021", "yyyy");
-        System.out.println(time);
-    }
+  public static void main(String[] args) {
+    OrderedMap<String, String> orderedMap = new ListOrderedMap<>();
+    orderedMap.put("b", "bb");
+    orderedMap.put("c", "cc");
+    orderedMap.put("a", "aa");
+    orderedMap.put("d", "dd");
+    System.out.println(orderedMap);
+    String s = orderedMap.lastKey();
+    System.out.println(s);
+  }
 }
-

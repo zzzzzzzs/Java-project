@@ -1,11 +1,12 @@
-import org.apache.commons.lang3.math.NumberUtils;
 
-/**
- * @author zs
- *@date 2021/9/26.
 
- */
+import java.util.HashMap;
+import java.util.Map;
+
+// 一致性哈希
+
+
 public class Test9 {
-    public static void main(String[] args) {
-    }
+
+
 }
