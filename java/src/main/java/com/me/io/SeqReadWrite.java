@@ -65,7 +65,8 @@ public class SeqReadWrite {
   }
 
   public static void main(String[] args) {
-
+    long hello = fileWrite("D:\\test.txt", "hello", 0);
+    System.out.println(hello);
   }
 
 }

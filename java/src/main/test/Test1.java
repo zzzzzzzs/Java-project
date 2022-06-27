@@ -1,11 +1,11 @@
-import com.google.common.collect.HashBasedTable;
-import com.google.common.collect.Table;
+import com.me.DataStore.PersonBean;
+import org.apache.commons.collections4.SortedBag;
+import org.apache.commons.collections4.bag.TreeBag;
+
+import java.util.TreeSet;
 
 public class Test1 {
-
   public static void main(String[] args) {
-    Table<String, String, String> table = HashBasedTable.create();
-    table.put("a", "b", "c");
-    System.out.println(table);
+    TreeSet<PersonBean> treeSet = new TreeSet<>();
   }
 }

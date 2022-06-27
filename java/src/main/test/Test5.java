@@ -1,7 +1,4 @@
-import java.util.HashMap;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Supplier;
+import cn.hutool.core.date.DateUtil;
 
 /**
  * @author zs
@@ -9,9 +6,7 @@ import java.util.function.Supplier;
  */
 public class Test5 {
   public static void main(String[] args) {
-    HashMap<Integer, Supplier<String>> map = new HashMap<>();
-    map.put(1, () -> "1");
-    String apply = map.get(1).get();
-    System.out.println(apply);
+    boolean after = DateUtil.date().after(DateUtil.parse("2022-06-23 23:59:59"));
+    System.out.println(after);
   }
 }
