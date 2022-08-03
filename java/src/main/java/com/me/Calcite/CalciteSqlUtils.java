@@ -638,7 +638,7 @@ class MySqlDialect extends SqlDialect {
   @Override
   public void unparseCall(SqlWriter writer, SqlCall call, int leftPrec, int rightPrec) {
     if (call.getOperator() == SqlStdOperatorTable.SUBSTRING) {
-      SqlUtil.unparseFunctionSyntax(SqlLibraryOperators.SUBSTR_ORACLE, writer, call, false);
+//      SqlUtil.unparseFunctionSyntax(SqlLibraryOperators.SUBSTR_ORACLE, writer, call, false);
     } else {
       switch (call.getKind()) {
         case FLOOR:

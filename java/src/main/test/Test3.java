@@ -1,23 +1,17 @@
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Maps;
-import com.google.common.collect.Multimap;
-
-import java.util.Collection;
-import java.util.Map;
-
 /**
  * @author zs
  * @date 2021/9/15.
  */
 public class Test3 {
+
+  // replaceChars 中的字符代替 searchChars 中的字符
+  public static String translate(String str, String searchChars, String replaceChars) {
+    return org.apache.commons.lang3.StringUtils.replaceChars(str, searchChars, replaceChars);
+  }
+
   public static void main(String[] args) {
-    Multimap<String, Integer> multimap = ArrayListMultimap.create();
-    multimap.put("day",1);
-    multimap.put("day",2);
-    multimap.put("day",8);
-    multimap.put("month",3);
-    Collection<Integer> day = multimap.get("day");
-    System.out.println(day);
+    System.out.println(translate("AaBbCc", "abc", "123"));
+    System.out.println(translate("AaBbCc", "abc", "1"));
+    System.out.println(translate("AaBbCc", "abc", ""));
   }
 }

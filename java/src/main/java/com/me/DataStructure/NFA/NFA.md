@@ -18,3 +18,4 @@ digraph G {
 	SUCC -> INIT[ label = "reset" , constraint=false,tailport="nw"];
 }
 )
+

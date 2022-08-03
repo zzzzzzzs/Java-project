@@ -108,7 +108,5 @@ public class ColumnUtil {
   }
 
   public static void main(String[] args) {
-    System.out.println(ColumnUtil.getFieldName(Person::gAge));
-    System.out.println(ColumnUtil.getFieldName(Person::gName));
   }
 }
