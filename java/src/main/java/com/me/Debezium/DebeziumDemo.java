@@ -38,10 +38,10 @@ public class DebeziumDemo {
                 (success, message, error) -> {
                   // 强烈建议加上此部分的回调代码，方便查看错误信息
 
-                  if (!success && error != null) {
+                  if (!success) {
                     // 报错回调
                     System.out.println("----------error------");
-                    System.out.println(message);
+                    System.out.println(message + ": " + error);
                   }
                 })
             .build();
@@ -55,33 +55,33 @@ public class DebeziumDemo {
     // 配置
     Properties props = new Properties();
     // 在maven处引入其他数据库的连接器，例如debezium-connector-postgres，再修改此处的connector.class，即可使用其他数据库的CDC
-    props.setProperty("connector.class", MySqlConnector.class.getCanonicalName());
-    props.setProperty("database.server.name", "my_server_01"); // 可以任意修改
+    props.setProperty("connector.class", "io.debezium.connector.mysql.MySqlConnector");
+    props.setProperty("database.server.name", "1000"); // 可以任意修改
     props.setProperty(
         "database.hostname", "pro-spark-shop-master-public.mysql.rds.aliyuncs.com"); // IP
-    props.setProperty("database.port", String.valueOf(3306)); // 端口
+    props.setProperty("database.port", "3306"); // 端口
     props.setProperty("database.user", "dev_zhaoshuo"); // 用户
     props.setProperty("database.password", "$m!hQ!X&j%nZa#KnB"); // 密码
-    props.setProperty("database.serverTimezone", "UTC"); // 时区
+    //    props.setProperty("database.serverTimezone", "UTC"); // 时区
     // 下面两个是数据库和表，注意只能选择一种:
     // 1. 使用database.whitelist，只设置数据库（会通知全库的CDC信息）
     // 2. 使用table.whitelist，设置库名和表名（会通知单个库的单个表的CDC信息）
-    //        props.setProperty("database.whitelist", "db_inventory_cdc");
-    //    props.setProperty("table.whitelist", "db_inventory_cdc.tb_products_cdc"); // 库.表名
+    props.setProperty("database.whitelist", "shop_order");
+    //        props.setProperty("table.whitelist", "db_inventory_cdc.tb_products_cdc"); // 库.表名
 
-//    props.setProperty("name", "engine");
-    // props.setProperty("offset.storage", FileOffsetBackingStore.class.getCanonicalName());
-    // props.setProperty("offset.storage.file.filename", "./storage/offset.dat");
-    // props.setProperty("offset.flush.interval.ms", String.valueOf(60000L));
-    //    props.setProperty("key.converter.schemas.enable", "false");
-    //    props.setProperty("value.converter.schemas.enable", "false");
-    //    props.setProperty("include.schema.changes", "false");
-    //    props.setProperty("tombstones.on.delete", "false");
-    //    props.setProperty("database.history", FileDatabaseHistory.class.getCanonicalName());
-    //    props.setProperty("database.history.store.only.monitored.tables.ddl", "true");
-    //    props.setProperty("database.history.file.filename", "./storage/dbhistory.dat");
-    //    props.setProperty("database.history.instance.name", UUID.randomUUID().toString());
-    //    props.setProperty("database.history.skip.unparseable.ddl", "true");
+    props.setProperty("name", "engine");
+    props.setProperty("offset.storage", "org.apache.kafka.connect.storage.FileOffsetBackingStore");
+    props.setProperty("offset.storage.file.filename", "./storage/offset.dat");
+    props.setProperty("offset.flush.interval.ms", String.valueOf(60000L));
+    props.setProperty("key.converter.schemas.enable", "false");
+    props.setProperty("value.converter.schemas.enable", "false");
+    props.setProperty("include.schema.changes", "false");
+    props.setProperty("tombstones.on.delete", "false");
+    props.setProperty("database.history", "io.debezium.relational.history.FileDatabaseHistory");
+    props.setProperty("database.history.store.only.monitored.tables.ddl", "true");
+    props.setProperty("database.history.file.filename", "./storage/dbhistory.dat");
+    props.setProperty("database.history.instance.name", UUID.randomUUID().toString());
+    props.setProperty("database.history.skip.unparseable.ddl", "true");
 
     return props;
   }
