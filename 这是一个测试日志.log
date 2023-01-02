@@ -1,0 +1,4 @@
+2023-01-02 22:15:01 DEBUG test1:34 - This is a debug message for test1
+2023-01-02 22:15:01 INFO  test1:35 - This is an info message for test1
+2023-01-02 22:15:13 DEBUG test1:34 - This is a debug message for test1
+2023-01-02 22:15:13 INFO  test1:35 - This is an info message for test1
