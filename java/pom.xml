@@ -273,6 +273,11 @@
             <artifactId>jgrapht-core</artifactId>
             <version>1.5.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.thrift</groupId>
+            <artifactId>libthrift</artifactId>
+            <version>0.18.1</version>
+        </dependency>
     </dependencies>
 
 
