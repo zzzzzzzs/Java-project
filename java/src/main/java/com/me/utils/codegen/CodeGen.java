@@ -10,10 +10,10 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 // 代码生成器
 public class CodeGen {
 
-    private static String url = "jdbc:mysql://bigdata102:3306/TodaysMatters";
-    private static String userName = "root";
-    private static String password = "000000";
-    private static String driverClassName = "com.mysql.jdbc.Driver";
+    private static String url = "jdbc:mysql://127.0.0.1:9030/dwd";
+    private static String userName = "admin";
+    private static String password = "VaO7Nu34JHh0Dgvy";
+    private static String driverClassName = "com.mysql.cj.jdbc.Driver";
 
     public static void main(String[] args) {
         AutoGenerator mpg = new AutoGenerator();
@@ -60,7 +60,7 @@ public class CodeGen {
         StrategyConfig config = new StrategyConfig();
         config.setNaming(NamingStrategy.underline_to_camel);
 //        config.setTablePrefix("wx_");
-        config.setInclude(new String[]{"student"});
+        config.setInclude(new String[]{"dwd_tt_order_dtl"});
         mpg.setStrategy(config);
 
         mpg.setPackageInfo(pc);
