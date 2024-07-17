@@ -1,10 +1,10 @@
-import org.json.JSONObject;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 public class Test9 {
+  private static final Logger LOG =  LogManager.getLogger(Test9.class);
   public static void main(String[] args) {
-    String jsonStr = "{\"id\":12,\"timestamp\":\"2020-09-15T10:00:00.000+08:00\",\"temperature\":\"25.5\"}";
-    JSONObject jsonObject = new JSONObject(jsonStr);
-    int id = jsonObject.getInt("id");
-    String timestamp = jsonObject.getString("timestamp");
-    System.out.println(id);
+    Integer ints = 3_000_000_000_000 % Integer.MAX_VALUE;
+    System.out.println(ints);
   }
 }

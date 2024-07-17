@@ -200,7 +200,11 @@
       <version>20220320</version>
     </dependency>
 
-
+    <dependency>
+      <groupId>org.duckdb</groupId>
+      <artifactId>duckdb_jdbc</artifactId>
+      <version>1.0.0</version>
+    </dependency>
     <!-- 日志 -->
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -270,6 +274,17 @@
       <artifactId>calcite-core</artifactId>
       <version>1.26.0</version>
     </dependency>
+    <dependency>
+      <groupId>org.jgrapht</groupId>
+      <artifactId>jgrapht-core</artifactId>
+      <version>1.5.1</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.jgrapht/jgrapht-ext -->
+    <dependency>
+      <groupId>org.jgrapht</groupId>
+      <artifactId>jgrapht-ext</artifactId>
+      <version>1.0.1</version>
+    </dependency>
 
   </dependencies>
 
@@ -281,7 +296,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
           <source>9</source>
-          <target>9</target>
+          <target>9</target><compilerArgs>--enable-preview</compilerArgs>
         </configuration>
       </plugin>
     </plugins>
