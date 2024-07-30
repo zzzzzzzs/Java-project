@@ -1,8 +1,9 @@
-package com.me.other;
+package com.me.producerconsumer;
 
 import java.util.concurrent.*;
 
-public class Test1 {
+// TODO 生产者消费者模型
+public class MultiProducerSingleConsumerWithTimeout {
     public static void main(String[] args) {
         BlockingQueue<String> queue = new LinkedBlockingQueue<>(1024 * 1024); // 创建一个有界的队列
 
