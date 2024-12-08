@@ -33,12 +33,12 @@ public class DuckdbDemo2 {
         stmt.execute("CREATE TABLE tbl (data json)");
 
         try (DuckDBAppender appender = conn.createAppender(DuckDBConnection.DEFAULT_SCHEMA, "tbl")) {
-            for (int i = 0; i < 100000; i++) {
+            for (int i = 0; i < 1000; i++) {
                 System.out.println(i);
                 appender.beginRow();
                 appender.append(s);
                 appender.endRow();
-                if (i % 100 == 0) {
+                if (i % 2000 == 0) {
                     appender.flush();
                 }
             }

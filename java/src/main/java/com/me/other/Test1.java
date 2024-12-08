@@ -1,78 +1,39 @@
 package com.me.other;
 
-import java.util.concurrent.*;
+
+import org.rocksdb.Options;
+import org.rocksdb.RocksDB;
+import org.rocksdb.RocksDBException;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.TimeUnit;
 
 public class Test1 {
+    static {
+        RocksDB.loadLibrary(); // 加载 RocksDB 的库
+    }
+
     public static void main(String[] args) {
-        BlockingQueue<String> queue = new LinkedBlockingQueue<>(1024 * 1024); // 创建一个有界的队列
+        // 指定数据库存储路径
+        String dbPath = "C:\\Temp\\testdb";
 
-        ExecutorService executor = Executors.newFixedThreadPool(5); // 创建线程池
+        try (final Options options = new Options().setCreateIfMissing(true);
+             final RocksDB db = RocksDB.open(options, dbPath)) {
 
-        // 创建消费者线程
-        Consumer consumer = new Consumer(queue);
-        Thread consumerThread = new Thread(consumer, "Consumer");
-        consumerThread.start();
+            // 插入数据
+            db.put("key1".getBytes(), "value1".getBytes());
 
-        // 创建多个生产者线程
-        for (int i = 0; i < 4; i++) {
-            Producer producer = new Producer(queue, "Producer-" + i);
-            executor.execute(producer);
-        }
+            // 获取数据
+            byte[] value = db.get("key1".getBytes());
+            System.out.println("Retrieved value: " + new String(value));
 
-        // 关闭线程池
-        executor.shutdown();
-    }
+            // 删除数据
+            db.delete("key1".getBytes());
 
-    static class Producer implements Runnable {
-        private final BlockingQueue<String> queue;
-
-        public Producer(BlockingQueue<String> queue, String name) {
-            this.queue = queue;
-            System.out.println(name + " started.");
-        }
-
-        @Override
-        public void run() {
-            try {
-                while (!Thread.currentThread().isInterrupted()) {
-                    String item = generateItem();
-                    queue.put(item); // 将数据放入队列
-//                    System.out.println("Produced: " + item);
-                    Thread.sleep((long) (Math.random() * 100)); // 随机休眠
-                }
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-        }
-
-        private String generateItem() {
-            return "Item-" + System.currentTimeMillis();
-        }
-    }
-
-    static class Consumer implements Runnable {
-        private final BlockingQueue<String> queue;
-
-        public Consumer(BlockingQueue<String> queue) {
-            this.queue = queue;
-            System.out.println("Consumer started.");
-        }
-
-        @Override
-        public void run() {
-            try {
-                while (true) {
-                    String item = queue.poll(1, TimeUnit.SECONDS); // 尝试获取数据，超时1秒
-                    if (item != null) {
-                        System.out.println("Consumed: " + item);
-                    } else {
-                        System.out.println("No data received in 1 second.");
-                        Thread.sleep(1000); // 随机休眠
-                    }
-                }
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
+        } catch (RocksDBException e) {
+            System.err.println("Error accessing RocksDB: " + e.getMessage());
         }
     }
 }
